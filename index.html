@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Something For You ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #fff0f3, #f8dce5, #fff5ee);
+  font-family: "Times New Roman", Times, serif;
+  color: #713b4c;
+  text-align: center;
+}
+
+header {
+  padding: 65px 22px 35px;
+}
+
+.heart {
+  font-size: 35px;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: normal;
+  margin: 15px 0;
+  color: #a34362;
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 550px;
+  margin: 15px auto;
+}
+
+.intro {
+  background: rgba(255,255,255,.65);
+  border: 1px solid #e9bdca;
+  border-radius: 18px;
+  padding: 25px;
+  max-width: 550px;
+  margin: 25px auto;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 27px;
+  color: #a34362;
+  margin: 45px 0 10px;
+}
+
+.collection {
+  padding: 10px 18px 50px;
+}
+
+.coupons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+  max-width: 760px;
+  margin: 25px auto;
+}
+
+.coupon {
+  background: #fffaf8;
+  border: 1px dashed #bd8294;
+  border-radius: 16px;
+  padding: 23px 13px;
+  position: relative;
+  min-height: 220px;
+  box-shadow: 0 5px 15px rgba(130,60,80,.07);
+}
+
+.number {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #b77c8e;
+}
+
+.coupon h3 {
+  font-size: 21px;
+  font-weight: normal;
+  color: #9e4561;
+  margin: 14px 0 9px;
+}
+
+.coupon p {
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 45px;
+}
+
+.redeem {
+  background: #a94e6a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 11px 19px;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.redeem:active {
+  transform: scale(.96);
+}
+
+.coupon.used {
+  opacity: .7;
+  background: #f7e8eb;
+}
+
+.coupon.used::after {
+  content: "REDEEMED ❤️";
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  border: 2px solid #a34362;
+  color: #a34362;
+  font-size: 17px;
+  padding: 7px;
+  background: #fff0f3;
+  pointer-events: none;
+}
+
+.coupon.used .redeem {
+  background: #b89aa3;
+}
+
+footer {
+  padding: 35px 20px 55px;
+  background: rgba(255,255,255,.5);
+  line-height: 1.8;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(65,20,38,.65);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.popup-content {
+  background: #fff6f5;
+  border-radius: 22px;
+  padding: 35px 25px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 10px 40px #541e3544;
+}
+
+.popup-content h2 {
+  margin-top: 5px;
+}
+
+#close {
+  background: #a94e6a;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-family: inherit;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+@media(max-width: 420px) {
+  h1 {
+    font-size: 29px;
+  }
+
+  .coupons {
+    gap: 10px;
+  }
+
+  .coupon {
+    padding: 18px 9px;
+  }
+
+  .coupon h3 {
+    font-size: 18px;
+  }
+
+  .coupon p {
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="heart">♡</div>
+
+  <h1>I'm Sorry, My Love</h1>
+
+  <p class="subtitle">
+    A little apology, a little love, and a few things
+    I owe you. ❤️
+  </p>
+
+  <div class="intro">
+    I'm sorry I made you upset. I love you, and I
+    really don't want us to be anything but happy.
+
+    <br><br>
+
+    I know I can be a handful sometimes, but you're
+    my favorite person, and I want to make it up to you.
+
+    <br><br>
+
+    So I've prepared a little something for you.
+    Consider this your personal collection of
+    love coupons.
+
+    <br><br>
+
+    No expiration date. Unlimited kisses.
+    Terms and conditions apply. 😘
+
+    <br><br>
+
+    I love you. Always. ❤️
+  </div>
+</header>
+
+<section class="collection">
+
+  <h2>The Romantic Collection</h2>
+  <p>A little love, just for you.</p>
+
+  <div class="coupons">
+
+    <div class="coupon" data-id="1">
+      <div class="number">COUPON NO. 01</div>
+      <h3>Date Night ❤️</h3>
+      <p>You choose the date, restaurant, and activity. I'm paying for the whole date. Your only job is to show up looking cute.</p>
+      <button class="redeem">Redeem Coupon</button>
+    </div>
+
+    <div class="coupon" data-id="2">
+      <div class="number">COUPON NO. 02</div>
+      <h3>Valorant Skins 🎮</h3>
+      <p>One Valorant skin of your choice, courtesy of your favorite person. Pick your dream skin!</p>
+      <button class="redeem">Redeem Coupon</button>
+    </div>
+
+    <div class="coupon" data-id="3">
+      <div class="number">COUPON NO. 03</div>
+      <h3>Love Letter 💌</h3>
+      <p>A handwritten letter reminding you exactly how much you mean to me.</p>
+      <button class="redeem">Redeem Coupon</button>
+    </div>
+
+    <div class="coupon" data-id="4">
+      <div class="number">COUPON NO. 04</div>
+      <h3>One Week of Meal Prep 🍱</h3>
+      <p>A whole week of meals prepared for you to take to work. No worrying about what you're eating!</p>
+      <button class="redeem">Redeem Coupon</button>
+    </div>
+
+  </div>
+
+  <h2>The Freaky Collection 😏</h2>
+  <p>For your eyes only. Use responsibly.</p>
+
+  <div class="coupons">
+
+    <div class="coupon" data-id="5">
+      <div class="number">COUPON NO. 05</div>
+      <h3>A Night of Your Choice</h3>
+      <p>You pick the romantic plans. I'll bring the good energy.</p>
+      <button class="redeem">Redeem Coupon</button>
+    </div>
+
+    <div class="coupon" data-id="6">
+      <div class="number">COUPON NO. 06</div>
+      <h3>Extra Kisses 💋</h3>
+      <p>An unreasonable amount of kisses. No complaints allowed.</p>
+      <button class="redeem">Redeem Coupon</button>
+    </div>
+
+    <div class="coupon" data-id="7">
+      <div class="number">COUPON NO. 07</div>
+      <h3>Full-Body Massage</h3>
+      <p>Relaxation, affection, and my undivided attention.</p>
+      <button class="redeem">Redeem Coupon</button>
+    </div>
+
+    <div class="coupon" data-id="8">
+      <div class="number">COUPON NO. 08</div>
+      <h3>Private Performance 😈</h3>
+      <p>A private lap dance + twerking, exclusively for you. Your very own personal show. 💋</p>
+      <button class="redeem">Redeem Coupon</button>
+    </div>
+
+  </div>
+
+</section>
+
+<div id="popup">
+  <div class="popup-content">
+    <div style="font-size:35px">💗</div>
+    <h2>Coupon Accepted!</h2>
+    <p id="popupMessage">
+      Your wish is my command.
+    </p>
+    <button id="close">I love you ❤️</button>
+  </div>
+</div>
+
+<footer>
+  <h2>One Last Thing...</h2>
+  <p>
+    No coupon could ever show you how much I love you.
+    I'm really glad you're mine.
+  </p>
+  <p>Forever your favorite headache. ❤️</p>
+  <div style="font-size:28px">♡ ♡ ♡</div>
+</footer>
+
+<script>
+const messages = {
+  1: "Tonight's date is on me, baby. Pick somewhere nice! ❤️",
+  2: "Time to upgrade that Valorant inventory. 🎮",
+  3: "You deserve to know how loved you are. 💌",
+  4: "Your work lunches are officially my responsibility for a week! 🍱",
+  5: "Well... looks like we're making plans tonight. 😏",
+  6: "Come here. You have kisses to collect. 💋",
+  7: "Your relaxation appointment has been approved.",
+  8: "Oh, you're redeeming THIS one? Someone's lucky. 😈"
+};
+
+const popup = document.getElementById("popup");
+const popupMessage = document.getElementById("popupMessage");
+
+document.querySelectorAll(".coupon").forEach(coupon => {
+  const id = coupon.dataset.id;
+  const button = coupon.querySelector(".redeem");
+
+  if (localStorage.getItem("coupon-" + id)) {
+    coupon.classList.add("used");
+    button.textContent = "Already Redeemed";
+  }
+
+  button.addEventListener("click", () => {
+    if (localStorage.getItem("coupon-" + id)) return;
+
+    localStorage.setItem("coupon-" + id, "true");
+    coupon.classList.add("used");
+    button.textContent = "Already Redeemed";
+
+    popupMessage.textContent = messages[id];
+    popup.style.display = "flex";
+  });
+});
+
+document.getElementById("close").addEventListener("click", () => {
+  popup.style.display = "none";
+});
+</script>
+
+</body>
+</html>
